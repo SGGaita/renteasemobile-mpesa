@@ -94,8 +94,8 @@ console.log("Test stk push")
             "PartyA": phone,
             "PartyB": process.env.SHORTCODE,
             "PhoneNumber": phone,
-            "CallBackURL": "https://uabiri-mpesa-api.onrender.com/callback",
-            "AccountReference": `Uabiri - ${req.body.vehicleRegistration}`,
+            "CallBackURL": "https://rent-ease-mpesa-server.onrender.com/callback",
+            "AccountReference": `Rent Ease`,
             "TransactionDesc": "Test"
         },
         {
@@ -119,11 +119,6 @@ console.log("Test stk push")
                  const transactionsRef = db.collection('Transactions').doc(merchantID)
  
                  const res2 = await transactionsRef.set({
-                      vehicleRegistration: req.body.vehicleRegistration,
-                      saccoName: req.body.saccoName,
-                      routeName: req.body.routeName,
-                      totalseats:req.body.totalseats,
-                      seatsNumbers: req.body.seats,
                       MerchantRequestID: merchantID,
                       CheckoutRequestID: checkOutID,
                       timestamp: +current_timestamp()
